@@ -50,6 +50,7 @@
     }
 
     section {
+      background: rgba(18, 26, 51, 0.92);
       background: color-mix(in oklab, var(--panel), transparent 8%);
       border: 1px solid #233466;
       border-radius: 16px;
@@ -81,6 +82,13 @@
       border-collapse: collapse;
       margin-top: 8px;
       font-size: 0.95rem;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
     th, td {
@@ -184,12 +192,13 @@
     <section>
       <h2>4. 御三家模型与主要产品（能力/价格）</h2>
       <table>
+        <caption>御三家模型代表产品、定位与参考价格对比</caption>
         <thead>
           <tr>
-            <th>厂商</th>
-            <th>代表产品</th>
-            <th>典型定位</th>
-            <th>参考价格（USD / 1M tokens）</th>
+            <th scope="col">厂商</th>
+            <th scope="col">代表产品</th>
+            <th scope="col">典型定位</th>
+            <th scope="col">参考价格（USD / 1M tokens）</th>
           </tr>
         </thead>
         <tbody>
