@@ -227,7 +227,52 @@
     </section>
 
     <section>
-      <h2>5. 用价格判断模型能力：一个实用框架</h2>
+      <h2>5. Anthropic 与 OpenAI：同源分叉的 AI 双巨头</h2>
+      <span class="tag">创业分裂</span>
+      <span class="tag">安全 vs 商业化</span>
+      <span class="tag">Constitutional AI</span>
+      <div class="two-col">
+        <div>
+          <h3>同一起点：OpenAI 的诞生</h3>
+          <ul>
+            <li>2015 年，Sam Altman、Elon Musk、Ilya Sutskever 等联合创立 OpenAI，初为非营利机构，愿景是"确保 AGI 造福全人类"。</li>
+            <li>2019 年转型为"有上限利润"公司（capped-profit），接受微软 10 亿美元战略投资，研究重心向产品商业化倾斜。</li>
+            <li>GPT-3（2020）的爆发式影响力，使内部关于"能力优先"还是"安全优先"的分歧日趋明显。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>分裂：Anthropic 的诞生（2021）</h3>
+          <ul>
+            <li>以 Dario Amodei（研究副总裁）与 Daniela Amodei（运营副总裁）为核心，连同约 11 名 OpenAI 骨干集体离职。</li>
+            <li>核心分歧：对 OpenAI 在微软投资后"商业化提速、安全对齐滞后"的路线产生根本性异议。</li>
+            <li>Anthropic 以"AI 安全研究公司"定位起步，提出 Constitutional AI（宪法 AI）方法，在训练阶段嵌入价值观约束。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3>理念差异</h3>
+          <ul>
+            <li><strong>OpenAI：</strong>先打造最强能力，再以资源反哺安全研究；RLHF + 大规模 scale 为路线核心。</li>
+            <li><strong>Anthropic：</strong>安全对齐内嵌于训练过程本身；强调可解释性（Interpretability）与可控性研究。</li>
+            <li>两者都相信前沿模型的巨大风险，但对"如何应对"的答案截然不同。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>竞争与纠葛</h3>
+          <ul>
+            <li>产品直接对垒：ChatGPT vs Claude，在企业 API 市场、消费者端、Coding 助手等场景正面竞争。</li>
+            <li>资本角力：OpenAI 背靠微软（数百亿美元），Anthropic 获 Amazon（40 亿）+ Google（数十亿）战略投资。</li>
+            <li>2023 年 Sam Altman 被董事会短暂罢免风波——部分根源仍是安全与商业化之争，折射出 OpenAI 内部矛盾未消。</li>
+            <li>讽刺之处：两家都以"AI 安全"自居，却又都在竞速前沿模型发布，形成"安全加速悖论"。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">延伸思考：选型不只是技术决策——了解供应商的价值取向、资本结构与安全承诺，同样是企业长期 AI 战略的一部分。</p>
+    </section>
+
+    <section>
+      <h2>6. 用价格判断模型能力：一个实用框架</h2>
       <ul>
         <li><strong>通常规律：</strong>更高价格往往对应更强推理、稳定性与复杂任务表现。</li>
         <li><strong>但不绝对：</strong>在简单任务上，低价模型可能具备更高性价比。</li>
@@ -236,7 +281,7 @@
     </section>
 
     <section>
-      <h2>6. 模型排名（按“复杂任务综合表现”示例）</h2>
+      <h2>7. 模型排名（按“复杂任务综合表现”示例）</h2>
       <ol>
         <li>第一梯队：旗舰推理模型（高成本，适合复杂决策/高风险任务）</li>
         <li>第二梯队：均衡型模型（性价比高，适合大多数研发与运营流程）</li>
@@ -246,7 +291,7 @@
     </section>
 
     <section>
-      <h2>7. 落地建议（内部行动清单）</h2>
+      <h2>8. 落地建议（内部行动清单）</h2>
       <ul>
         <li>选择 2–3 个高频流程，定义可量化目标（效率、质量、成本）。</li>
         <li>以 OpenClaw/Agent 框架打底，接入 Copilot 与内部工具链。</li>
