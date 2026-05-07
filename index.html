@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent时代｜AI应用沙龙分享</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --text: #e8ecff;
+      --muted: #b4bfdc;
+      --accent: #64d2ff;
+      --accent-2: #8effa8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #182750, var(--bg) 55%);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 56px 24px 24px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+      display: grid;
+      gap: 16px;
+    }
+
+    section {
+      background: rgba(18, 26, 51, 0.92);
+      background: color-mix(in oklab, var(--panel), transparent 8%);
+      border: 1px solid #233466;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      margin: 14px 0 6px;
+      color: var(--accent-2);
+      font-size: 1.05rem;
+    }
+
+    ul { margin: 0; padding-left: 1.2rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    th, td {
+      border: 1px solid #2d3f79;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #1a2752; }
+
+    .tag {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #4562bc;
+      color: #cdd9ff;
+      font-size: 0.85rem;
+    }
+
+    .note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 12px 16px 28px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agent时代</h1>
+    <p class="subtitle">软件内部 AI 应用沙龙分享（HTML 版）</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. 开场：为什么是 Agent 时代</h2>
+      <span class="tag">LLM 从“问答”到“执行”</span>
+      <span class="tag">工具调用 + 记忆 + 工作流</span>
+      <span class="tag">从 Demo 到业务闭环</span>
+      <ul>
+        <li>过去：模型主要用于内容生成与检索增强。</li>
+        <li>现在：模型开始具备“计划-调用工具-执行-复盘”能力。</li>
+        <li>机会：把高频、规则清晰、反馈可量化的流程优先 Agent 化。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. 从 OpenClaw 入手：背景、来龙去脉与价值</h2>
+      <div class="two-col">
+        <div>
+          <h3>背景与动机</h3>
+          <ul>
+            <li>企业落地 Agent 常见痛点：工具接入复杂、流程不稳定、成本难控。</li>
+            <li>OpenClaw 的核心意义：把 Agent 的工程化能力模块化，降低落地门槛。</li>
+            <li>强调可组合、可观测、可治理，而不只是“跑通一个 Demo”。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>OpenClaw 做了什么</h3>
+          <ul>
+            <li>统一 Agent 编排：任务拆解、工具路由、执行重试。</li>
+            <li>提供运行闭环：日志追踪、效果评估、成本监控。</li>
+            <li>支持业务接入：让团队能将内部知识库/API/流程快速纳入 Agent。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">建议内部实践：先围绕“单点高价值流程”做 PoC，再扩展到多 Agent 协作。</p>
+    </section>
+
+    <section>
+      <h2>3. GitHub Copilot 与 Vibe Coding：研发现场的 Agent 化</h2>
+      <div class="two-col">
+        <div>
+          <h3>GitHub Copilot 应用场景</h3>
+          <ul>
+            <li>代码补全、重构建议、单测生成、PR 描述草拟。</li>
+            <li>结合 Issues/PR/Actions，形成“开发-评审-交付”协同链路。</li>
+            <li>面向团队可落地：统一 Prompt 模板与代码规范约束。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Vibe Coding 的应用方式</h3>
+          <ul>
+            <li>以“需求意图 + 快速迭代反馈”驱动开发节奏。</li>
+            <li>人负责边界与质量，Agent 负责生成与试错加速。</li>
+            <li>关键原则：小步提交、自动化验证、可回滚。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 御三家模型与主要产品（能力/价格）</h2>
+      <table>
+        <caption>御三家模型代表产品、定位与参考价格对比</caption>
+        <thead>
+          <tr>
+            <th scope="col">厂商</th>
+            <th scope="col">代表产品</th>
+            <th scope="col">典型定位</th>
+            <th scope="col">参考价格（USD / 1M tokens）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OpenAI</td>
+            <td>GPT-4.1 / GPT-4o / o 系列</td>
+            <td>综合能力强，生态丰富，工程集成成熟</td>
+            <td>输入约 $5–$15，输出约 $15–$60（按型号差异）</td>
+          </tr>
+          <tr>
+            <td>Anthropic</td>
+            <td>Claude 3.5 Sonnet / Claude 3 Opus</td>
+            <td>长文本、代码理解、对齐与稳定性表现突出</td>
+            <td>输入约 $3–$15，输出约 $15–$75</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td>Gemini 1.5 Pro / Gemini 1.5 Flash</td>
+            <td>多模态与长上下文，价格梯度灵活</td>
+            <td>Flash：低价高吞吐；Pro：中高价高能力（分档计费）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">说明：价格会随版本与平台调整，请以官方最新定价页为准。内部选型可先用“单位任务成本/成功率”做 A/B 测试。</p>
+    </section>
+
+    <section>
+      <h2>5. 用价格判断模型能力：一个实用框架</h2>
+      <ul>
+        <li><strong>通常规律：</strong>更高价格往往对应更强推理、稳定性与复杂任务表现。</li>
+        <li><strong>但不绝对：</strong>在简单任务上，低价模型可能具备更高性价比。</li>
+        <li><strong>建议指标：</strong>任务成功率、平均响应时间、每次成功成本、人工返工率。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. 模型排名（按“复杂任务综合表现”示例）</h2>
+      <ol>
+        <li>第一梯队：旗舰推理模型（高成本，适合复杂决策/高风险任务）</li>
+        <li>第二梯队：均衡型模型（性价比高，适合大多数研发与运营流程）</li>
+        <li>第三梯队：轻量高速模型（低成本高吞吐，适合批量与实时场景）</li>
+      </ol>
+      <p class="note">结论：不要追求“全场景单模型最优”，而是建立“分层模型路由”策略。</p>
+    </section>
+
+    <section>
+      <h2>7. 落地建议（内部行动清单）</h2>
+      <ul>
+        <li>选择 2–3 个高频流程，定义可量化目标（效率、质量、成本）。</li>
+        <li>以 OpenClaw/Agent 框架打底，接入 Copilot 与内部工具链。</li>
+        <li>建立模型分层与成本看板，按季度迭代模型路由策略。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Agent时代｜内部 AI 应用沙龙 · 建议时长 30–40 分钟
+  </footer>
+</body>
+</html>
